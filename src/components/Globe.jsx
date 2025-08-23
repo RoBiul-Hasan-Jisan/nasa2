@@ -7,16 +7,17 @@ import * as THREE from "three";
 // Country data
 const countries = [
   { name: "USA", lat: 37.1, lon: -95.7 },
-  { name: "Bangladesh", lat: -23.7, lon: 90.4 },
+  { name: "Bangladesh", lat: 23.7, lon: 90.4 },
   { name: "Brazil", lat: -14.2, lon: -51.9 },
   { name: "Australia", lat: -25.3, lon: 133.8 },
-  { name: "India", lat: -20.6, lon: 78.9 },
-  { name: "China", lat: 35.8, lon: 104.1 },
-  { name: "UK", lat: 55.3, lon: -3.4 },
+  { name: "India", lat: 20.6, lon: 78.9 },
+  { name: "China", lat: 35.9, lon: 104.2 },
+  { name: "UK", lat: 55.4, lon: -3.4 },
   { name: "Canada", lat: 56.1, lon: -106.3 },
   { name: "Japan", lat: 36.2, lon: 138.3 },
   { name: "South Africa", lat: -30.6, lon: 22.9 },
 ];
+
 
 // Convert latitude/longitude to 3D coordinates
 function latLonToVector3(lat, lon, radius = 2.5) {
@@ -36,7 +37,7 @@ function EarthModel() {
   const { scene } = useGLTF("/models/realistic_3d_earth_model_with_4k_textures.glb");
 
   useFrame(() => {
-    if (ref.current) ref.current.rotation.y += 0.0008; // slow rotation
+    if (ref.current) ref.current.rotation.y += 0.000; // slow rotation
   });
 
   return (
